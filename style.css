@@ -1,0 +1,45 @@
+*,*::after,*::before{
+    
+    box-sizing: border-box;
+    font-family: inherit;
+    margin: 0;
+    padding: 0;
+    /* display: inherit; */
+}
+html,body{
+    display: inline;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+.blueshirt:hover~.zoom-img{
+    display: inline-block;
+    width: 500px;
+    height: 500px;
+    background-image: url(blueshirt.jpg);
+}
+
+.redshirt:hover~.zoom-img{
+    display: inline-block;
+    width: 500px;
+    height: 500px;
+    background-image: url(redshirt.jpg);
+}
+.blackshirt:hover~.zoom-img{
+    display: inline-block;
+    width: 500px;
+    height: 500px;
+    background-image: url(Blackshirt.jpg);
+}
+.brownshirt:hover~.zoom-img{
+    display: inline-block;
+    width: 500px;
+    height: 500px;
+    background-image: url(brownshirt.jpg);
+}
+.whiteshirt:hover~.zoom-img{
+    display: inline-block;
+    width: 500px;
+    height: 500px;
+    background-image: url(white\ shirt.jpg);
+}
