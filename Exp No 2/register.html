@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="bootstrap.min.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+        <title>Login page </title>
+        
+    </head>
+    <body class="text-center">
+        <main class="form-signin w-100 m-auto">
+  <form action="" method="post">
+    <h1 class="h3 mb-3 fw-normal">User Registration</h1>
+    <div class="form-floating">
+      <input name="uname" type="text" class="form-control" id="floatingInput" placeholder="name" required>
+      <label for="floatingInput">User Name</label>
+    </div>
+    <div class="form-floating">
+      <input name="psw" type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+      <label for="floatingPassword">Password</label>
+    </div>
+    <div class="form-floating">
+      <input name="cpsw" type="password" class="form-control" id="floatingPassword" placeholder="Confirm Password" required>
+      <label for="floatingPassword">Confirm Password</label>
+    </div>
+    <select name="user-type" class="form-select" id="floatingSelect" required>
+      <option   value="admin">Admin</option>
+      <option selected value="user">User</option>
+    </select>
+
+    
+    <button name="submit" class="btn-signin w-100 btn btn-lg btn-primary" type="submit">Add User</button>
+    </form>
+  <form action="index.html" method="">
+    <button type="submit" class="btn-signin w-100 btn btn-lg btn-outline-secondary" name="login">Log in</button>
+  </form>
+</main>
+        <script link="bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    </body>
+</html>
