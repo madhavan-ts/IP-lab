@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            min-height: 100vh;
+            min-width: 100vh;            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 20px;
+        }
+        .container{
+           display: inline-block;
+            width: 500px;
+
+            background-color: rgb(84, 84, 84);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            padding: 25px 30px;
+            justify-content: center;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px #7a7a7a;
+
+        }
+        .element-wrapper{
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .verify{
+            margin-bottom: 30px;
+            background-color: #7463f7;
+        }
+        .reset{
+            background-color: #ff6161;
+        }
+        .btn{
+            color: white;
+            font-weight: 500;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            text-transform: uppercase;
+            font-family: inherit;
+            font-size: 18px;
+            
+        }
+
+        .title{
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .formfields{
+            padding: 5px 3px;
+            border-radius: 5px;
+            width: 200px;
+            border: 0;
+            border-bottom: 4px solid #7463f7;
+        }
+        .formfields:focus{
+            outline: #7463f7 solid;
+
+        }
+        select{
+            border: 0;
+            border-radius: 5px;
+            width: 100px;
+            border-top: 3px solid #7463f7;
+        }
+    </style>
+</head>
+<body>
+    <form action="" name="forms1">
+    <div class="container">
+        <h1 class="title">Velammal College Registration</h1>
+        <div class="element-wrapper">
+            <label for="username">Username</label>
+            <input class="formfields" type="text" name="username" id="username" placeholder="Username">
+        </div>
+        <div class="element-wrapper">
+            <label for="password">Password</label>
+            <input class="formfields" type="password" name="pass" id="password" placeholder="Password">
+        </div>
+        <div class="element-wrapper">
+            <label for="confirm">Confirm Password</label>
+            <input class="formfields" type="password" name="confirm" id="confirm" placeholder="Confirm Password">
+        </div>
+        <div class="element-wrapper">
+            <label for="email">Email</label>
+            <input class="formfields" type="email" name="email" id="email" placeholder="E-mail">
+        </div>
+        <div class="element-wrapper">
+            <label for="age">Age</label>
+            <input class="formfields" max="25" min="17" type="number" name="age" id="age" placeholder="Age">
+        </div>
+        <div class="element-wrapper">
+            <label for="address">Address</label>
+            <input class="formfields" type="text" name="address" id="address" placeholder="Address">
+        </div>
+        <div class="element-wrapper">
+            <label for="department">Select Department</label>
+            <select name="department" id="department">
+                <option value="">Select Dept</option>
+                <option value="CSE">CSE</option>
+                <option value="IT">IT</option>
+                <option value="MECH">MECH</option>
+                <option value="ECE">ECE</option>
+                <option value="EEE">EEE</option>
+                <option value="civil">CIVIL</option>
+            </select>
+        </div>
+        <input class="verify btn" type="button" value="verify" onclick="validateform()">
+        <input class="reset btn" type="reset" value="reset">
+        </div>
+        </form>
+        <script>
+            function validateform(){
+                var name = document.forms.forms1.username.value;
+                var email = document.forms.forms1.email.value;
+                var age = document.forms.forms1.age.value;
+                var choose = document.forms.forms1.department.value; 
+                var regEmail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g;
+                var regPhone=/^\d{10}$/;
+                var regName = /\d+$/g;
+                if (name == "" || regName.test(name)) {
+                    alert("Please enter your Name properly.");
+                    name.focus();
+                    return false;
+                }
+                if (email == "" || regEmail.test(email)) {
+                    alert("Please enter a valid E-mail address.");
+                    email.focus();
+                    return false;
+                }  
+                if (age == "" || regPhone.test(age)) {
+                    alert("Enter Age your");
+                    age.focus();
+                    return false;
+                }
+    
+                
+                return true;
+            }
+        </script>
+</body>
+</html>
